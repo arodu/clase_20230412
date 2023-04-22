@@ -1,19 +1,106 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
+
+<head>
+    <title>
+        <%= title %>
+    </title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-    <p><%= name %></p>
+</head>
 
-    <h2>Datos personales</h2>
-    <h2>Formación académica</h2>
-    <h2>Experiencia laboral</h2>
-    <h2>Enlace a sus redes sociales</h2>
-    <h2>Habilidades y destrezas</h2>
+<body>
+    <h1>
+        <%= title %>
+    </h1>
+    <p>Welcome to <%= title %>
+    </p>
+    <p>
+        <%= name %>
+    </p>
 
-  </body>
+    <hr>
+
+    <h2>Creación de un nuevo proyecto con Node.js y Express</h2>
+
+    <h3>Paso 1: Generación del proyecto usando Express Application Generator</h3>
+
+    <p>crear un nuevo proyecto de Node.js con Express, es recomendable utilizar Express Application Generator. Este es
+    un generador de código que facilita la creación de una estructura básica de un proyecto de Express.</p>
+
+    <p>Para generar el proyecto con npx, se deben seguir los siguientes pasos:</p>
+
+    <ol>
+        <li>Abrir la terminal y crear una nueva carpeta para el proyecto.</li>
+        <li>Generar el proyecto con el siguiente comando: <code>npx express-generator --view=ejs nombre_proyecto</code>
+        </li>
+        <li>Instalar las dependencias del proyecto con el comando: <code>cd nombre_proyecto && npm install</code></li>
+    </ol>
+    
+    <h3>Paso 2: Creación de una página inicial "Hola Mundo"</h3>
+
+    <p>Para crear una página inicial que muestre su nombre, apellido, cédula y sección, se debe seguir los siguientes pasos:</p>
+
+    <ol>
+        <li>Abrir el archivo <code>routes/index.js</code></li>
+        <li>Editar el archivo para que se muestren los datos requeridos. Por ejemplo:
+            <pre>
+router.get('/', function(req, res, next) {
+    res.render('index', { title: 'Hola Mundo', nombre: 'Nombre', apellido: 'Apellido', cedula: '123456789', seccion: 'Sección' });
+});
+            </pre>
+        </li>
+        <li>Crear una vista <code>index.ejs</code> en la carpeta <code>views</code>, con el siguiente contenido:
+            <pre>
+&lt;h1&gt;
+    &lt;%= title %&gt;
+&lt;/h1&gt;
+&lt;p&gt;Mi nombre es &lt;%= nombre %&gt;
+    &lt;%= apellido %&gt;
+&lt;/p&gt;
+&lt;p&gt;Mi cédula es &lt;%= cedula %&gt;&lt;/p&gt;
+&lt;p&gt;Estoy en la sección &lt;%= seccion %&gt;&lt;/p&gt;
+            </pre>
+        </li>
+    </ol>
+
+    <h3>Paso 3: Subir el código a Github</h3>
+
+    <p>Para subir el código a Github, es necesario seguir los siguientes pasos:</p>
+
+    <ol>
+        <li>Crear un nuevo repositorio en Github llamado <code>P2_CEDULA</code> (reemplazar CEDULA por su número de cédula).
+        </li>
+        <li>En la terminal, navegar hasta la carpeta del proyecto y ejecutar los siguientes comandos:
+            <pre>
+git init
+git add .
+git commit -m "Primer commit"
+git remote add origin URL_DEL_REPOSITORIO_GITHUB
+git push -u origin master
+            </pre>
+        </li>
+    </ol>
+
+    <h3>Paso 4: Crear un proyecto en Render</h3>
+
+    <p>Para crear un proyecto en Render, se deben seguir los siguientes pasos:</p>
+
+    <ol>
+        <li>Ir a la página de Render (<a href="https://render.com/">https://render.com/</a>) y hacer clic en "Sign up".
+        </li>
+        <li>Crear una nueva instancia de servicio de Node.js.</li>
+        <li>Conectar la instancia con el repositorio de Github creado anteriormente.</li>
+    </ol>
+
+    <h3>Paso 5: Verificar la página inicial en Render</h3>
+
+    <p>Para verificar que la página inicial se muestra correctamente en Render, es necesario seguir los siguientes pasos:</p>
+
+    <ol>
+        <li>En Render, seleccionar la instancia de Node.js creada anteriormente.</li>
+        <li>Hacer clic en "Web Preview" para abrir la página en el navegador.</li>
+    </ol>
+
+</body>
+
 </html>
